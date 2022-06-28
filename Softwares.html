@@ -30,7 +30,7 @@
     <script >
       function capturar(){
         console.log("capturado");
-        function Peliculas(Titulo, Director, Genero, Pais, Año, Duracion){
+        function SoftwareUsuario(Titulo, Director, Genero, Pais, Año, Duracion){
           this.Titulo=Titulo;
           this.Director=Director;
           this.Genero=Genero;
@@ -38,21 +38,15 @@
           this.Año=Año;
           this.Duracion=Duracion;
         }
-        var capturarTitulo=document.getElementById("Titulo").value;
-        console.log(capturarTitulo);
-        var capturarDirector=document.getElementById("Director").value;
-        console.log(capturarDirector);
-        var capturarGenero=document.getElementById("Genero").value;
-        console.log(capturarGenero);
-        var capturarPais=document.getElementById("Pais").value;
-        console.log(capturarPais);
-        var capturarAño=document.getElementById("Año").value;
-        console.log(capturarAño);
-        var capturarDuracion=document.getElementById("Duracion").value;
-        console.log(capturarDuracion);
+        var capturarSoftware=document.getElementById("Software").value;
+        console.log(capturarSoftware);
+        var capturarEmpresa=document.getElementById("Empresa").value;
+        console.log(capturarEmpresa);
+        var capturarUsuario=document.getElementById("Usuario").value;
+        console.log(capturarUsuario);;
         //var suejeto= new Persona("Kurt", 27); //captura estatica
         // varialble local var sujeto= new Persona(capturarnombre, capturaredad);
-        sujeto= new Peliculas(capturarTitulo, capturarDirector, capturarGenero, capturarPais, capturarAño, capturarDuracion);//variable global
+        sujeto= new Softwares(capturarSoftware, capturarEmpresa, capturarUsuario);//variable global
         //console.log(sujeto);
         agregar();
       }
