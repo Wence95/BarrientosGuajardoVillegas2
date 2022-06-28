@@ -1,5 +1,18 @@
 body{
+    background-color: rgb(65, 82, 128);
+    color: rgb(0, 0, 0);
+}
 
-    background-color: aquamarine;
-
+text{
+    font-size: 2px;
+    color: rgb(0, 0, 0)
+}
+tr{
+    background-color: rgb(75, 129, 13);
+}
+th{
+    width: 145px;
+}
+td{
+    background-color: rgb(103, 75, 224);
 }
