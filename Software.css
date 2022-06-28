@@ -1,18 +1,5 @@
 body{
-    background-color: rgb(18, 83, 18);
-    color: white;
-}
 
-text{
-    font-size: 2px;
-    color: white
-}
-tr{
-    background-color: crimson;
-}
-th{
-    width: 145px;
-}
-td{
-    background-color: darkgoldenrod;
+    background-color: aquamarine;
+
 }
