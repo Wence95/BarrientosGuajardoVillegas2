@@ -1,0 +1,71 @@
+!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+
+    <title>Ejercicio de Arreglos JavaScript </title>
+    <link rel = "stylesheet" href= "Software.css"/>
+  </head>
+  <body>
+    <div class="container py-2">
+    <p class="lead">Ingresa Info de Software</p>
+    <form >
+      <input id="Titulo" type="text" placeholder="Ingresa el Software" class="form-control my-2">
+      <input id="Director" type="text" placeholder="Ingresa la Empresa del Software" class="form-control my-2">
+      <input id="Genero" type="text" placeholder="Ingresa el Usuario" class="form-control my-2">
+      <button id="boton" type="reset" onclick="capturar();"  class="btn bnt-success">agregar</button>
+    </form>
+    </div>
+    <div class="container">
+      <table class="table" id="tabla">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Titulo</th>
+            <th>Director</th>
+            <th>Genero</th>
+            <th>Pais</th>
+            <th>Año</th>
+            <th>Duracion</th>
+          </tr>
+        </thead>
+      </table>
+
+</div>
+    <script >
+      function capturar(){
+        console.log("capturado");
+        function Peliculas(Titulo, Director, Genero, Pais, Año, Duracion){
+          this.Titulo=Titulo;
+          this.Director=Director;
+          this.Genero=Genero;
+          this.Pais=Pais;
+          this.Año=Año;
+          this.Duracion=Duracion;
+        }
+        var capturarTitulo=document.getElementById("Titulo").value;
+        console.log(capturarTitulo);
+        var capturarDirector=document.getElementById("Director").value;
+        console.log(capturarDirector);
+        var capturarGenero=document.getElementById("Genero").value;
+        console.log(capturarGenero);
+        var capturarPais=document.getElementById("Pais").value;
+        console.log(capturarPais);
+        var capturarAño=document.getElementById("Año").value;
+        console.log(capturarAño);
+        var capturarDuracion=document.getElementById("Duracion").value;
+        console.log(capturarDuracion);
+        //var suejeto= new Persona("Kurt", 27); //captura estatica
+        // varialble local var sujeto= new Persona(capturarnombre, capturaredad);
+        sujeto= new Peliculas(capturarTitulo, capturarDirector, capturarGenero, capturarPais, capturarAño, capturarDuracion);//variable global
+        //console.log(sujeto);
+        agregar();
+      }
+      var basedatos=[];
+      function agregar(){
+        basedatos.push(sujeto)
+        console.log(basedatos);
+        document.getElementById("tabla").innerHTML += '<tbody><td>'+sujeto.Titulo+'</td><td>'+sujeto.Director+'</td><td>'+sujeto.Genero+'</td><td>'+sujeto.Pais+'</td><td>'+sujeto.año+'</td><td>'+sujeto.Duracion+'</td></tbody>';
+      };
+    </script>
+
+  </body>
+</html>
