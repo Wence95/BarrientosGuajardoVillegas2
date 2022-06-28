@@ -30,7 +30,10 @@
     <script >
       function capturar(){
         console.log("capturado");
-        }
+        this.Software=Software
+        this.Empresa=Empresa
+        this.Usuario=Usuario
+
         var capturarSoftware=document.getElementById("Software").value;
         console.log(capturarSoftware);
         var capturarEmpresa=document.getElementById("Empresa").value;
@@ -47,7 +50,7 @@
       function agregar(){
         basedatos.push(sujeto)
         console.log(basedatos);
-        document.getElementById("tabla").innerHTML += '<tbody><td>'+sujeto.Titulo+'</td><td>'+sujeto.Director+'</td><td>'+sujeto.Genero+'</td><td>'+sujeto.Pais+'</td><td>'+sujeto.año+'</td><td>'+sujeto.Duracion+'</td></tbody>';
+        document.getElementById("tabla").innerHTML += '<tbody><td>'+sujeto.Software+'</td><td>'+sujeto.Empresa+'</td><td>'+sujeto.Usuario+'</td></tbody>';
       };
     </script>
 
