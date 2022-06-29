@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
-
+    <meta charset="utf-8">
     <title>Ejercicio de Arreglos JavaScript </title>
     <link rel = "stylesheet" href= "Software.css"/>
+
   </head>
   <body>
     <div class="container py-2">
+        <h1 id="Software lol">Softwares de usuario</h1>
+        <h2 id="subtitulos">blabla</h2>
     <p class="lead">Ingresa Info de Software</p>
     <form >
       <input id="Software" type="text" placeholder="Ingresa el Software" class="form-control my-2">
       <input id="Empresa" type="text" placeholder="Ingresa la Empresa del Software" class="form-control my-2">
       <input id="Usuario" type="text" placeholder="Ingresa el Usuario" class="form-control my-2">
-      <button id="boton" type="reset" onclick="capturar();"  class="btn bnt-success">agregar</button>
+      <button id="boton" type="reset" onclick="capturar();"  class="btn bnt-success">BotonIngresar</button>
+      <article id="articulo">
+        dfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdf
+        dfdfdfdf
+
+        dfdfdfdfdfdf
+
+
+  </article>
+  <button id="boton2" type="reset" onclick="" class="btn bnt-success" >CAMBIAR</button>
+=======
     </form>
     </div>
     <div class="container">
@@ -28,30 +41,52 @@
 
 </div>
     <script >
-      function capturar(){
-        function Software(nombre, empresa, usuario){
-          this.nombre=nombre
-          this.empresa=empresa
-          this.usuario=usuario
-        }
+
+function capturar(){
+      console.log("capturado");
+      function SoftwareUsuario(Software, Empresa, Usuario){
+        this.Software=Software;
+        this.Empresa=Empresa;
+        this.Usuario=Usuario;
+      }
+
+    
+
+
         var capturarSoftware=document.getElementById("Software").value;
         console.log(capturarSoftware);
         var capturarEmpresa=document.getElementById("Empresa").value;
         console.log(capturarEmpresa);
         var capturarUsuario=document.getElementById("Usuario").value;
         console.log(capturarUsuario);
+        h1.style.color="blue";
+        h1.style.background="orange";
         //var suejeto= new Persona("Kurt", 27); //captura estatica
         // varialble local var sujeto= new Persona(capturarnombre, capturaredad);
-        sujeto= new Software(capturarSoftware, capturarEmpresa, capturarUsuario);//variable global
-        console.log(sujeto);
+        sujeto= new SoftwareUsuario(capturarSoftware, capturarEmpresa, capturarUsuario);//variable global
+        //console.log(sujeto);
         agregar();
       }
+      var h1=document.getElementById("Software lol");
+        console.log(h1.innerHTML);
+        h1.style.color="blue";
+        h1.style.background="orange";
+        var h2=document.getElementById("subtitulos");
+        console.log(h2.innerHTML);
       var basedatos=[];
       function agregar(){
         basedatos.push(sujeto)
         console.log(basedatos);
         document.getElementById("tabla").innerHTML += '<tbody><td>'+sujeto.nombre+'</td><td>'+sujeto.empresa+'</td><td>'+sujeto.usuario+'</td></tbody>';
       };
+      var boton = document.getElementById("boton2");
+      boton.onclick=function(){
+
+
+      h2.style.color="blue";
+      h2.style.background="black";
+      }
     </script>
   </body>
+
 </html>
