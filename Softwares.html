@@ -6,26 +6,16 @@
     <link rel = "stylesheet" href= "Software.css"/>
 
   </head>
-  <body>
+  <body id="body">
+    <button id="boton2" type="reset" onclick="" class="btn bnt-success">Modo Oscuro/Claro</button>
     <div class="container py-2">
         <h1 id="Software lol">Softwares de usuario</h1>
-        <h2 id="subtitulos">blabla</h2>
     <p class="lead">Ingresa Info de Software</p>
     <form >
-      <input id="Software" type="text" placeholder="Ingresa el Software" class="form-control my-2">
-      <input id="Empresa" type="text" placeholder="Ingresa la Empresa del Software" class="form-control my-2">
-      <input id="Usuario" type="text" placeholder="Ingresa el Usuario" class="form-control my-2">
+      <input id="Software" type="text" placeholder="Nombre" class="form-control my-2">
+      <input id="Empresa" type="text" placeholder="Empresa" class="form-control my-2">
+      <input id="Usuario" type="text" placeholder="Usuario" class="form-control my-2">
       <button id="boton" type="reset" onclick="capturar();"  class="btn bnt-success">BotonIngresar</button>
-      <article id="articulo">
-        dfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdfdf
-        dfdfdfdf
-
-        dfdfdfdfdfdf
-
-
-  </article>
-  <button id="boton2" type="reset" onclick="" class="btn bnt-success" >CAMBIAR</button>
-=======
     </form>
     </div>
     <div class="container">
@@ -42,13 +32,13 @@
 </div>
     <script >
 
-function capturar(){
-      console.log("capturado");
-      function SoftwareUsuario(Software, Empresa, Usuario){
-        this.Software=Software;
-        this.Empresa=Empresa;
-        this.Usuario=Usuario;
-      }
+      function capturar(){
+        console.log("capturado");
+        function SoftwareUsuario(Software, Empresa, Usuario){
+          this.Software=Software;
+          this.Empresa=Empresa;
+          this.Usuario=Usuario;
+        }
 
     
 
@@ -59,32 +49,44 @@ function capturar(){
         console.log(capturarEmpresa);
         var capturarUsuario=document.getElementById("Usuario").value;
         console.log(capturarUsuario);
-        h1.style.color="blue";
-        h1.style.background="orange";
         //var suejeto= new Persona("Kurt", 27); //captura estatica
         // varialble local var sujeto= new Persona(capturarnombre, capturaredad);
         sujeto= new SoftwareUsuario(capturarSoftware, capturarEmpresa, capturarUsuario);//variable global
         //console.log(sujeto);
         agregar();
       }
-      var h1=document.getElementById("Software lol");
-        console.log(h1.innerHTML);
-        h1.style.color="blue";
-        h1.style.background="orange";
-        var h2=document.getElementById("subtitulos");
-        console.log(h2.innerHTML);
+      var colorfila="white"
       var basedatos=[];
       function agregar(){
         basedatos.push(sujeto)
         console.log(basedatos);
-        document.getElementById("tabla").innerHTML += '<tbody><td>'+sujeto.nombre+'</td><td>'+sujeto.empresa+'</td><td>'+sujeto.usuario+'</td></tbody>';
+        document.getElementById("tabla").innerHTML += '<tbody><td class="fila" style="background-color: '+colorfila+'">'+sujeto.Software+'</td><td class="fila" style="background-color: '+colorfila+'">'+sujeto.Empresa+'</td><td class="fila" style="background-color: '+colorfila+'">'+sujeto.Usuario+'</td></tbody>';
       };
+
+      var cuerpo = document.getElementById("body");
       var boton = document.getElementById("boton2");
       boton.onclick=function(){
-
-
-      h2.style.color="blue";
-      h2.style.background="black";
+        var filas = document.getElementsByClassName("fila");
+        console.log(cuerpo.style.backgroundColor);
+        console.log(filas);
+        if(cuerpo.style.backgroundColor!="rgb(40, 40, 40)"){
+          cuerpo.style.background="rgb(40,40,40)";
+          cuerpo.style.color="rgb(220, 220, 220)";
+          for(i=0; i < filas.length; i++){
+            filas[i].style.backgroundColor = "black";
+            
+          }
+          colorfila="black";
+        }
+        else{
+          cuerpo.style.background="rgb(184, 184, 184)";
+          cuerpo.style.color="black";
+          for(i=0; i < filas.length; i++){
+            filas[i].style.backgroundColor = "white";
+            
+          }
+          colorfila="white"
+        }
       }
     </script>
   </body>
